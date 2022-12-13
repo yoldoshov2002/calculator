@@ -1,0 +1,110 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+body{
+    min-height: 100vh;
+    background: #0c192c;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+span{
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,0 0 100px #4fc3dc;
+    animation: animate 12s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,0 0 50px #ff2d75,0 0 100px #ff2d75;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(-10vh) scale(0);
+    }
+    100%{
+        transform: translateY(100vh) scale(.5);
+    }
+}
+
+.hisob{
+    height: 50px;
+    margin: 0px 20px 30px 20px;
+    text-align: right;
+    
+}
+.hisob input{
+    color: rgb(14, 14, 14);
+    background: rgb(230, 216, 216);
+    font-size: 48px;
+    width: 230px;
+    text-align: right;
+}
+.container .row{
+    margin-top: 50px;
+    background: #000;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+    max-width: 273px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    top: 15%;
+}
+#result{
+    padding-right: 10px;
+    padding-left: 20px;
+    
+}
+#result button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(117, 101, 101);
+    color: white;
+    font-size: 28px;
+    margin-top: 5px;
+    
+}
+#result .delete img{
+    margin-top: 5px;
+    margin-bottom: -3px;
+    margin-right: 5px;
+    height: 22px;
+    width: 30px;
+    opacity: 1;
+}
+#result .delete img:hover{
+    opacity: 0.7;
+}
+#result button:hover{
+  transform: scale(1.1);
+  color: greenyellow;
+}
+@media(max-width:768px){
+    .bubbles span{
+        width: 20px;
+        height: 20px;
+
+    }
+}
+@media(max-width:425px){
+    .bubbles span{
+        width: 12px;
+        height: 12px;
+    }
+}
